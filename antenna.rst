@@ -161,16 +161,16 @@ Backend          Bands   Bandwidth (MHz)  Sampling time   Max freq. bins        
 =============== ======= ================= =============== ===================== ====================================================================== 
 **Total Power**   C,K   250,680,1200,2000 1-1000 ms          1                  continuum (analog)
 **XARCOS**        C,K   0.5,2.0,7.8,62.5  10s               2048                spectro-polarimeter
-**SARDARA**       C,K   420, 1500(1200*)  down to 5ms       1024 or 16384       spectro-polarimeter(*)    
-**SARDARA**        L    115,230,460,1500  down to 5ms       1024 or 16384       spectro-polarimeter(*)
+**SARDARA**       C,K   420(300), 1500(1200*)  down to 5ms       1024 or 16384       spectro-polarimeter  
+**SARDARA**        L    420(100* or 90*) ,1500(500*)  down to 5ms       1024 or 16384       spectro-polarimeter
 **DFB3**         L,C,K  256,512,1024      100 microsec      8192, pulsars: 2048 online pulsar folding + pulsar/transient search 
 **ROACH1**      P,L,C,K         128             -             (varies)          baseband recorder + offline pulsar folding + pulsar/transient search
 **DBBC**        P,L,C,K         512             -                -              VLBI 
 =============== ======= ================= =============== ===================== ====================================================================== 
  
-(1200*) the actual available bandwidth for SARDARA is 1200 MHz.
+The actual  RF bandwidth  for SARDARA is 1200 MHz, for the 1500 MHz backend  configuration (K-Band, C-Band). Similarly, for the 420 MHz configuration the effective RF is 300 MHz with the K-Band and L-Band receiver. Instead, the L band receiver has only 500 MHz of RF bandwidth, but  when the Sardara 420 MHz configuration is needed, the actual  RF bandwidth for SARDARA is 100 or 90 MHz, accordingly to the selected receiver RF filter.
 
-(*) only total intensity is offered for observations in spectral line mode with SARDARA; for continuum observations, the spectro-polarimetric observing mode has been tested for C and K bands, but not for L-band. 
+
 
 
 Total Power 
@@ -281,20 +281,19 @@ SARDARA
 SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 Available configurations consist of:
 
-**in C and K bands:**
-
 * 420 MHz bandwith with 1024 or 16384 channels 
 * 1500 MHz bandwidth with 1024 or 16384 channels 
 
 SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend's Focus Selector is being used as input to SARDARA. 
 
-**in L band:**
+**L band setup:**
 
-The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters can be used (XXL4, XXL2 etc.) as well as additional backend filters (115, 230 or 460 MHz).
+The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters must be used (XXL4, XXL2 etc.): for 420 MHz configuration, the available filters are the XXL3, XXL5, XXC3 or XXC5 which are to be selected accordingly the needed sky frequency and polarization. Note that with these filters the effective RF bandwidth is 100 MHz or 90 MHz    
+
+**Sardara for all configuration is offered in shared risk mode**
 
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
-Note: for this call, only total intensity is offered for observations in spectral line mode with SARDARA. Instead for continuum observations, the spectro-polarimetric observing mode has been tested for C and K bands, but not for L-band. 
 
 Calibration
 ===========
@@ -385,7 +384,6 @@ Flux       Polarization angle  Instrumental polarization
 ========== =================== =========================
 3C286      3C286               3C84
 3C147      3C138               NGC7027
-3C48
 3C295
 ========== =================== =========================
 
