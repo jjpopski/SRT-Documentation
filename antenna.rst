@@ -129,8 +129,6 @@ More details about current and future receivers at Italian radio telescopes (SRT
 LP-band Filters
 ----------------
 
-* RF filters
-
 Different RF filters are available for the LP-band receiver. Although it is a coaxial receiver package, the control system sees it as a group of three different receivers, each one with its own code:
 
 For the PPP receiver (P-band), there is one available filter (with code L2XX for linear or C2XX for circular):  300--360 MHz (which is needed to exclude RFI at higher frequencies).
@@ -144,10 +142,6 @@ For the LLP (L-band) configuration, the following filters are available for line
 * XXL5 (for linear) or XXC5 (for circular):	1625--1715 MHz (VLBI band)
 
 For simultaneous LP observations, all combinations of the above configurations are allowed.
-
-* Additional filters
-
-Additional filters (115 MHz, 230 MHz and 460 MHz) are available at L-band for the DFB, ROACH1, DBBC and SARDARA backends. The L-band (1300 - 1800 MHz) is downconverted using a local oscillator; therefore the central frequencies of these filters can be tuned to the desired range by tuning the value for the local oscillator.
 
 Backends 
 ========
@@ -278,7 +272,7 @@ SARDARA
 
 *The use of this backend is admitted in shared-risk mode. Users are required to contact the antenna staff prior to submission, in order to assess the availability of software/hardware services for their specific needs.*
 
-SARDARA is a backend composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
+The SARDARA backend is composed of seven fully-reconfigurable ROACH-2 boards that allow it to perform wide-band spectro-polarimetric observations. The many observing modes covered by SARDARA include: continuum, spectroscopy and spectro-polarimetry. In the future, it will also be able to perform high-time resolution for pulsars and fast transients (not currently available). Its sampling time can be set from 5ms to 1 s. It is the backend of choice for On-The-Fly (OTF) spectro-polarimetric observations.
 Available configurations consist of:
 
 * 420 MHz bandwith with 1024 or 16384 channels 
@@ -286,11 +280,11 @@ Available configurations consist of:
 
 SARDARA's spectral resolution and sensitivity are defined by its full 1500 MHz bandwidth. However only 1200 MHz of the full 1500 MHz bandwidth is usable, since the 1200 MHz filter of the Total Power backend's Focus Selector is being used as input to SARDARA. 
 
-**L band setup:**
+**L-band setup:**
 
-The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters must be used (XXL4, XXL2 etc.): for 420 MHz configuration, the available filters are the XXL3, XXL5, XXC3 or XXC5 which are to be selected accordingly the needed sky frequency and polarization. Note that with these filters the effective RF bandwidth is 100 MHz or 90 MHz    
+The full bandwidth for this receiver is 500 MHz (1.3-1.8 GHz). RF filters must be used (choose between XXL5, XXL4, XXL3, XXL2 etc.). For the 420 MHz configuration, the available filters are: XXL3, XXL5, XXC3 or XXC5, which are to be selected according to the needed sky frequency and polarization. We note that using these filters, the effective RF bandwidth is only 100 MHz or 90 MHz.    
 
-**Sardara for all configuration is offered in shared risk mode**
+**SARDARA is offered in shared-risk mode in all of its configurations.**
 
 More detailed information on the SARDARA backend can be found here: `SARDARA <https://www.worldscientific.com/doi/full/10.1142/S2251171718500046>`_. 
 
